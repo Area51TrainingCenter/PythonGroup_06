@@ -1,0 +1,17 @@
+Python Clase 03 24/06/2017
+
+* Hilos y Concurrencia
+  * https://docs.python.org/3.6/library/multiprocessing.html
+  * https://docs.python.org/3/library/threading.html#threading.Thread
+
+* Intérprete online de python
+  * https://repl.it/languages/python3
+* Ejercicios OOP
+    * Clase Reloj, que devuelva la hora actual y tenga los métodos agregar_minuto() y agregar_hora()
+    * Escribir una clase CuentaCorriente, que se construya con un saldo y tenga métodos depositar(cantidad) y transferir(cuenta)
+    * Escribir la clase FiguraGeometrica que se construya con una serie de lados y clases derivadas Rectánculo, Cuadrado, Círculo que tengan un método area()
+* Decoradores
+* Funciones de alto nivel
+* Listas por comprensión
+* Recursión2
+* Expresiones regulares: https://regex101.com/
