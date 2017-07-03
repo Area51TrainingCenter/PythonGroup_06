@@ -1,0 +1,13 @@
+Hola {{ nombre }}, tienes {{ edad }} años, y tus hobbies son:
+
+<ul>
+    {% for hobbie in hobbies %}
+        <li>{{ hobbie|upper }}</li>
+    {% endfor %}
+</ul>
+
+{% if edad >= 18 %}
+    <h2>Eres mayor de edad</h2>
+{% else %}
+    <h2>Eres menor de edad </h2>
+{% endif %}

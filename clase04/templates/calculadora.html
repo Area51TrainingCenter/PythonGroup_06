@@ -1,0 +1,26 @@
+<h1>Calculadora</h1>
+
+{% if resultado %}
+    <h2>Resultado: {{ resultado }}</h2>
+{% endif %}
+
+<form action="" method="post">
+    Operador:
+    <select name="operador">
+        <option value="suma">+</option>
+        <option value="resta">-</option>
+        <option value="producto">*</option>
+        <option value="cociente">/</option>
+    </select>
+    <br>
+
+    Operando 1:
+    <input type="text" name="op1">
+    <br>
+
+    Operando 2:
+    <input type="text" name="op2">
+    <br>
+
+    <input type="submit" value="Calcular">
+</form>

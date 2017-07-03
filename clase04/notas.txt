@@ -1,0 +1,14 @@
+VIRTUALENV (ubicarse en una carpeta con permisos de escritura):
+Crear: python3 -m venv env
+Activar:
+    * OSX: source env/bin/activate
+    * W$: env\Scripts\Activate
+
+FLASK:
+http://flask.pocoo.org/
+restricción de variables en rutas: http://flask.pocoo.org/docs/0.12/quickstart/#variable-rules
+
+Email API:
+* https://www.mailgun.com/pricing
+* https://www.mailjet.com/pricing_v3
+* https://www.djangoproject.com/

@@ -1,0 +1,11 @@
+Introduce tu nombre:
+
+<form action="" method="post">
+    Nombre:
+    <input type="text" name="nombre">
+    <input type="submit" value="Enviar">
+</form>
+
+{% if nombre %}
+    <h1>Hola {{ nombre }}</h1>
+{% endif %}
