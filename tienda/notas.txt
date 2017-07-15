@@ -1,0 +1,45 @@
+Github: https://github.com/Area51TrainingCenter/PythonGroup_06
+Flask: http://flask.pocoo.org/docs/0.12/
+Django: https://docs.djangoproject.com/en/1.11/
+Pony: https://docs.ponyorm.com/
+SQLAlchemy: https://www.sqlalchemy.org/
+EVE: http://python-eve.org/quickstart.html
+WTForms: https://wtforms.readthedocs.io/en/latest/
+
+SQLITE Frontends:
+    - https://chrome.google.com/webstore/detail/sqlite-viewer-with-google/aaeojgplhedihcdhfcgodiepddeecepl
+    - http://sqlitebrowser.org/
+
+Proyecto: Tienda de ropa
+
+* Portada: últimos productos
+* Buscador: buscar prendas por:
+    - nombre
+    - tipo (zapatos, casacas, etc...)
+    - fecha de publicación
+
+* Detalle de producto:
+    - nombre
+    - tipo
+    - talla
+    - descripción
+    - imágenes
+    - precio
+    - stock
+
+* Clientes:
+    - registro
+    - perfil
+    - (pedidos)
+
+* Pedidos:
+    - productos
+    - precio total
+    - forma de pago: EFECTIVO, DEPOSITO, VISA, PAYPAL, ...
+    - estado: RECIBIDO, PAGADO, ENTREGADO, CANCELADO
+
+
+Django model fields: https://docs.djangoproject.com/en/1.11/ref/models/fields/#field-types
+Django query fields reference: https://docs.djangoproject.com/en/1.11/ref/models/querysets/#id4
+
+https://docs.djangoproject.com/en/1.11/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names

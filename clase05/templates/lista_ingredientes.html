@@ -1,0 +1,15 @@
+<h1>Lista de ingredientes</h1>
+
+<ul>
+    {% for ingrediente in ingredientes %}
+        <li>{{ ingrediente.nombre }} <a href="/quitar/{{ ingrediente.id }}">(quitar)</a> <a href="/editar/{{ ingrediente.id }}">(editar)</a></li>
+    {% endfor %}
+</ul>
+
+<form action="" method="post">
+    Ingrediente:
+    <input type="text" name="ingrediente">
+    <input type="submit" value="Guardar">
+</form>
+
+<p>Quejas?: <a href="/contacto">Formulario de contacto</a></p>
