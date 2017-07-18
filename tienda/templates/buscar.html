@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Buscar {% endblock %}
+
+{% block contenido %}
+<h1>Buscar:</h1>
+
+<form action="" method="get">
+    Término:
+    <input type="text" name="termino" value="{{ request.GET.termino }}">
+    <input type="submit" value="Buscar">
+</form>
+
+{% if resultados %}
+    <h3>Resultados</h3>
+    <ul>
+        {% for producto in resultados %}
+            <li><a href="{% url 'detalle' producto.id %}">{{ producto.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+<h1>HOLA {{ nombre }}</h1>
+
+<ul>
+    {% for elemento in lista %}
+        <li>{{ elemento }}</li>
+    {% endfor %}
+</ul>
+
+{% if edad >= 18 %}
+    <h1>Eres mayor de edad</h1>
+{% else %}
+    <h1>Eres menor de edad</h1>
+{% endif %}

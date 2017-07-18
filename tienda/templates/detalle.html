@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block contenido %}
+
+    <h1>Producto: {{ producto.nombre }}</h1>
+    <ul>
+        <li>
+            Categorías:
+            <ul>
+                {% for categoria in producto.categorias.all %}
+                    <li>{{ categoria.nombre }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>Talla: {{ producto.get_talla_display }}</li>
+        <li>Descripción: {{ producto.descripcion }}</li>
+        <li>Precio: S/.{{ producto.precio }}</li>
+        <li>Stock: {{ producto.stock }}</li>
+        <li>Publicado: {{ producto.fecha_creacion|date:"d/m/Y" }}</li>
+    </ul>
+
+    <h4>Imágenes:</h4>
+    {% for imagen in producto.imagenproducto_set.all %}
+        <p><img src="{{ imagen.imagen.url }}" width="100"></p>
+    {% endfor %}
+{% endblock %}

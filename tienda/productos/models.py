@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Categoria(models.Model):
+    nombre = models.CharField(
+        max_length=50,
+        blank=False,
+        null=False
+    )
+
+    def __str__(self):
+        return self.nombre
+
+
 class Producto(models.Model):
     nombre = models.CharField(
         max_length=100,
@@ -29,5 +40,41 @@ class Producto(models.Model):
         auto_now=True
     )
 
+    categorias = models.ManyToManyField(Categoria)
+
+    talla = models.PositiveIntegerField(
+        choices=(
+            (1, 'XS'),
+            (2, 'S'),
+            (3, 'M'),
+            (4, 'L'),
+            (5, 'XL'),
+        ),
+        blank=True,
+        null=True
+    )
+
+    stock = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False
+    )
+
     def __str__(self):
         return self.nombre
+
+
+class ImagenProducto(models.Model):
+    producto = models.ForeignKey(Producto)
+    imagen = models.ImageField(
+        upload_to='productos',
+        blank=False,
+        null=False
+    )
+
+    def __str__(self):
+        return self.producto.nombre
+
+    class Meta:
+        verbose_name = 'Imagen de producto'
+        verbose_name_plural = 'Imágenes de producto'

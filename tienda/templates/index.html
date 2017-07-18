@@ -1,3 +1,13 @@
-<h1>HOLA {{ nombre }}</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-<p>{{request}}</p>
+{% block contenido %}
+<img src="{% static 'gatito.jpg' %}">
+
+<h1>Últimos productos:</h1>
+<ul>
+    {% for producto in productos %}
+        <li><a href="{% url 'detalle' producto.id %}">{{ producto.nombre }} - S/.{{ producto.precio }} <img src="{{ producto.imagenproducto_set.all.first.imagen.url }}" width="50"></a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
