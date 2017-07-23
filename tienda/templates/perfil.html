@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Perfil</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if request.user.perfil.avatar %}
+            Imagen: <img src="{{ request.user.perfil.avatar.url }}" width="100">
+            <br>
+        {% endif %}
+        <input type="submit" value="Guardar">
+    </form>
+{% endblock %}

@@ -11,6 +11,14 @@
     <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'buscar' %}">Buscador</a></li>
+
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'perfil' %}">Perfil</a></li>
+            <li><a href="{% url 'logout' %}">Logout ({{ request.user.username }})</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'registro' %}">Registro</a></li>
+        {% endif %}
     </ul>
 
     {% block contenido %}{% endblock %}
