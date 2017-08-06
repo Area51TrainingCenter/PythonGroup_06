@@ -14,6 +14,7 @@
 
         {% if request.user.is_authenticated %}
             <li><a href="{% url 'perfil' %}">Perfil</a></li>
+            <li><a href="{% url 'carrito' %}">Carrito ({{ request.session.carrito.keys|length }})</a></li>
             <li><a href="{% url 'logout' %}">Logout ({{ request.user.username }})</a></li>
         {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>

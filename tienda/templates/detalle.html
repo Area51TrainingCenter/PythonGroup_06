@@ -23,4 +23,13 @@
     {% for imagen in producto.imagenproducto_set.all %}
         <p><img src="{{ imagen.imagen.url }}" width="100"></p>
     {% endfor %}
+
+    {% if request.user.is_authenticated %}
+        <form action="{% url 'agregar_carrito' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="producto" value="{{ producto.id }}">
+            Cantidad: <input type="text" name="cantidad">
+            <input type="submit" value="Agregar al Carrito">
+        </form>
+    {% endif %}
 {% endblock %}

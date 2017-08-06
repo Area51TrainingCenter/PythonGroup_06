@@ -9,6 +9,11 @@ from usuarios.models import Perfil
 class LoginView(auth_views.LoginView):
     template_name = 'login.html'
 
+    def form_valid(self, form):
+        if 'carrito' not in self.request.session:
+            self.request.session['carrito'] = {}
+        return super(LoginView, self).form_valid(form)
+
 
 # class LogoutView(auth_views.LogoutView):
 #     pass

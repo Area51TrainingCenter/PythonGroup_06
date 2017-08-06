@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>Carrito de compras</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto, cantidad, subtotal in carrito %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>S/. {{ producto.precio }}</td>
+                    <td>{{ cantidad }}</td>
+                    <td>S/. {{ subtotal }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total:</td>
+                <td>S/. {{ total }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Comprar</h2>
+    <form action="{% url 'ordenar' %}" method="post">
+        {% csrf_token %}
+        Medio de pago:
+        <select name="pago">
+            <option value="1">Efectivo</option>
+            <option value="2">Contra entrega</option>
+            <option value="3">Tarjeta</option>
+            <option value="4">Paypal</option>
+        </select>
+        <input type="submit" value="Ordenar">
+    </form>
+{% endblock %}
